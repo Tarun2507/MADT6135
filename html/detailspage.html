@@ -1,0 +1,184 @@
+<html>
+    <link rel="stylesheet" type="text/css" href="../css/detailpage.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+  
+    <body>
+        <!-- header-->
+        <div class="header">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUrnmr3CB1oDs0WqiWPzNxENXCnRE-1yKVKw&usqp=CAU"
+                class="logo">
+            <div class="search">
+                <div class="image-wrapper">
+                    <img style="width: 15.7px;
+                    height: 15.7px;background: #f5f5f6;
+                    border: 1px solid #f5f5f6;" src="../css/images/search.png">
+                </div>
+                <input placeholder="Search for products" class="input-css">
+    
+            </div>
+            <div class="profile">
+                <img class="profile-image" src="../css/images/profile.png">
+                <img class="profile-image" src="../css/images/fav.png">
+                <div style="position: relative;display: inline-flex;">
+                <img onclick="goToCheckout()" class="profile-image" src="../css/images/bag.png">
+                <span id="bag" style="color: rgb(255, 255, 255);
+                background-color: rgb(208, 2, 27);
+                font-size: 10px;
+                position: absolute;
+                display: flex;
+                -webkit-box-pack: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                align-items: center;
+                top: -6px;
+                right: -8px;
+                width: 16px;
+                height: 16px;
+                display: none;
+                border-radius: 50%;"></span>
+                </div>
+            </div>
+        </div>
+        <!-- details-->
+<div class="col-100">
+    <div class="col-50">
+        <img id="product-img" style="width: 460px;height: 460px;" src=""> </img>
+    </div>
+    <div class="col-50">
+        <div class="vertical">
+        <h1 id="productName"></h1>
+        <p> Sizes S-XL </p>
+        <div id="productPrice" class="price"></div>
+        <div class="Color"> Color : <span id="productColor"></span></div>
+        <div style="display: flex;margin-bottom: 14px;">
+            <button style="min-width: 64px;
+            height: 32px;
+            border-radius: 20px;
+            padding: 4px;
+            background-color: transparent;
+            cursor: pointer;
+            margin: 4px 5px 4px 3px;
+            text-align: center;
+            position: relative;
+            border: 2px solid rgb(66, 125, 0);
+            color: rgb(66, 125, 0);">S</button>
+              <button style="min-width: 64px;
+              height: 32px;
+              border-radius: 20px;
+              padding: 4px;
+              background-color: transparent;
+              cursor: pointer;
+              margin: 4px 5px 4px 3px;
+              text-align: center;
+              position: relative;
+              border: 2px solid rgb(66, 125, 0);
+              color: rgb(66, 125, 0);">M</button>
+                <button style="min-width: 64px;
+                height: 32px;
+                border-radius: 20px;
+                padding: 4px;
+                background-color: transparent;
+                cursor: pointer;
+                margin: 4px 5px 4px 3px;
+                text-align: center;
+                position: relative;
+                border: 2px solid rgb(66, 125, 0);
+                color: rgb(66, 125, 0);">L</button>
+                  <button style="min-width: 64px;
+                  height: 32px;
+                  border-radius: 20px;
+                  padding: 4px;
+                  background-color: transparent;
+                  cursor: pointer;
+                  margin: 4px 5px 4px 3px;
+                  text-align: center;
+                  position: relative;
+                  border: 2px solid rgb(66, 125, 0);
+                  color: rgb(66, 125, 0);">XL</button>
+        </div>
+        <div class="quantity">Quantity:</div>
+        <div style="display: flex;align-items: baseline;margin-bottom: 5%; ">
+        <button onclick="decreaseQuantity()" style="min-height: 40px;
+        border-style: solid;
+        text-shadow: none;
+        position: relative;
+        width: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 21px;
+        border-width: 2px;
+        font-size: 0.909rem;
+        background-color: #427D00;
+        color: #FFF;
+        border-color: #427D00;
+        width: 56px;
+        height: 40px;
+        border: none;
+        font-size: 1.772rem;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        font-weight: 100;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;">-</button>
+        <input id="quantityvalue" class="quantity" type="number" inputmode="numeric" pattern="[0-9]*" min="1" max="10" step="1" aria-invalid="false" aria-label="Quantity"  value="1">
+        <button onclick="increaseQuantity()" style="min-height: 40px;
+        border-style: solid;
+        text-shadow: none;
+        position: relative;
+        width: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 21px;
+        border-width: 2px;
+        font-size: 0.909rem;
+        background-color: #427D00;
+        color: #FFF;
+        border-color: #427D00;
+        width: 56px;
+        height: 40px;
+        border: none;
+        font-size: 1.772rem;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        font-weight: 100;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;">+</button>
+    </div>
+    <div style="display: flex;">
+    <button onclick="addToBag()" style="min-height: 40px;
+    border-style: solid;
+    text-shadow: none;
+    position: relative;
+    width: 30%;
+    padding: 10px 0px;
+    border-radius: 21px;
+    border-width: 2px;
+    font-size: 0.909rem;
+    background-color: rgb(66, 125, 0);
+    color: rgb(255, 255, 255);
+    border-color: rgb(66, 125, 0);">Add to bag</button>
+    <button style="min-height: 40px;
+    border-style: solid;
+    text-shadow: none;
+    position: relative;
+    width: 30%;
+    margin-left: 10px;
+    padding: 10px 0px;
+    border-radius: 21px;
+    border-width: 2px;
+    font-size: 0.909rem;
+    background-color: rgb(255, 255, 255);
+    color: rgb(51, 51, 51);
+    border-color: rgb(51, 51, 51);">
+    Wish list</button>
+    </div>
+    </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="../js/detailspage.js"></script>

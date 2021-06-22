@@ -1,0 +1,126 @@
+<html>
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/checkout.css">
+    <body>
+<div class="header">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUrnmr3CB1oDs0WqiWPzNxENXCnRE-1yKVKw&usqp=CAU"
+        class="logo">
+    <div class="search">
+        <div class="image-wrapper">
+            <img style="width: 15.7px;
+            height: 15.7px;background: #f5f5f6;
+            border: 1px solid #f5f5f6;" src="../css/images/search.png">
+        </div>
+        <input placeholder="Search for products" class="input-css">
+
+    </div>
+    <div class="profile">
+        <img class="profile-image" src="../css/images/profile.png">
+        <img class="profile-image" src="../css/images/fav.png">
+        <div style="position: relative;display: inline-flex;">
+        <img class="profile-image" src="../css/images/bag.png">
+        <span style="color: rgb(255, 255, 255);
+        background-color: rgb(208, 2, 27);
+        font-size: 10px;
+        position: absolute;
+        display: none;
+        -webkit-box-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        align-items: center;
+        top: -6px;
+        right: -8px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;">2</span>
+        </div>
+    </div>
+</div>
+<!--
+    Checkout 
+-->
+<div id="checkout-header" class="checkout-header">
+    <div id="firstChild" style="display: flex;
+    flex: 60%;
+    flex-direction: column;">
+
+    </div>
+    <!-- first child -->
+<!--<div class="checkout">
+    <div class="checkout-child-1">
+<div class="checkout-child-2">
+<img src="https://i5.walmartimages.ca/images/Thumbnails/023/996/815243023996.jpg" style="width:210px;height:210px">
+<div class="order-details">
+    <a class="desc" id="pro-desc"  rel="">George Men’s short Sleeved Crewneck Cotton Tee</a>
+    <div>Color : Black</div>
+    <div>Size:L</div>
+</div>
+</div> -->
+<!-- quantity -->
+<!--<div class="quantity-header">
+<div class="quantity"> Quantity </div>
+        <div class="quantity-child">
+        <button class="decrease" >-</button>
+        <input id="prodQuantity" class="quantity" type="number" inputmode="numeric" pattern="[0-9]*" min="1" max="10" step="1" aria-invalid="false" aria-label="Quantity"  value="1">
+        <button class="increase">+</button>
+    </div>
+</div>
+    </div>
+    <div id="item-price">6$</div>
+</div> -->
+<!-- second child -->
+<div id="place-orderid" class="place-order">
+<div style="display: flex;
+flex-direction: column;
+padding: 16px;
+width: 100%;
+height: 50%;">
+    <div style="font-weight: 500;color: #333;">Checkout </div>
+    <div style="border: none;
+    border-bottom: 1px solid;
+    border-bottom-color: #666;
+    margin-top: 8px;
+    margin-bottom: 8px;"></div>
+   <div style="display: flex;justify-content: space-between;">
+    <div>Subtotal</div>
+    <div id="subtotalprice"></div>
+</div>
+<div style="display: flex;justify-content: space-between;">
+    <div>Myntra Shipping</div>
+    <div>5.97$</div>
+</div>
+<div style="display: flex;justify-content: space-between;">
+    <div>Order handling</div>
+    <div>5.00$</div>
+</div>
+<div style="border: none;
+border-bottom: 1px solid;
+border-bottom-color: #666;
+margin-top: 8px;
+margin-bottom: 8px;"></div>
+<div style="display: flex;justify-content: space-between;">
+    <div>Estimated Total</div>
+    <div id ="estimatedTotal"></div>
+</div>
+<button onclick="placeOrder()" style="min-height: 40px;
+border-style: solid;
+text-shadow: none;
+position: relative;
+width: 100%;
+padding: 10px 0px;
+border-radius: 21px;
+border-width: 2px;
+font-size: 0.909rem;
+background-color: rgb(66, 125, 0);
+color: rgb(255, 255, 255);
+border-color: rgb(66, 125, 0);
+margin-top: 15px;">Place order</button>
+</div>
+</div>
+</div>
+
+</div>
+
+</body>
+</html>
+<script src="../js/checkout.js"></script>

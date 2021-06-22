@@ -1,0 +1,109 @@
+.checkout-header {
+    display: flex;
+    flex: 100%;
+    max-width: 100%;
+    margin-top: 3%;
+}
+.checkout {
+    display: flex;
+    /* flex: 1; */
+    /* max-width: 60%; */
+    justify-content: space-between;
+    border: 1px solid rgb(180, 180, 180);
+    padding: 23px 10px;
+    margin-bottom: 8px;
+}
+.order-details {
+    display: flex;
+    flex-direction: column;
+
+}
+.quantity {
+    position: relative;
+    text-align: center;
+    width: 56px;
+    height: 20px;
+    top: -4px;
+    border: none;
+    -moz-appearance: textfield;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+}
+.place-order {
+    display: flex;
+    flex: 35%;
+    max-width: 35%;
+    background-color: #F2F1EF;
+    margin-left: 2%;
+    height: 50%;
+}
+.decrease {
+    min-height: 40px;
+        border-style: solid;
+        text-shadow: none;
+        position: relative;
+        width: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 21px;
+        border-width: 2px;
+        font-size: 0.909rem;
+        background-color: #427D00;
+        color: #FFF;
+        border-color: #427D00;
+        width: 56px;
+        height: 40px;
+        border: none;
+        font-size: 1.772rem;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        font-weight: 100;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+}
+.quantityheader {
+    display: flex;flex-direction: column; align-items: center;padding-left: 80px;
+}
+.increase {
+    min-height: 40px;
+        border-style: solid;
+        text-shadow: none;
+        position: relative;
+        width: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 21px;
+        border-width: 2px;
+        font-size: 0.909rem;
+        background-color: #427D00;
+        color: #FFF;
+        border-color: #427D00;
+        width: 56px;
+        height: 40px;
+        border: none;
+        font-size: 1.772rem;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        font-weight: 100;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+}
+.checkout-child-1 {
+    display: flex;justify-content: space-between;
+}
+.checkout-child-2 {
+    display: flex;flex-direction: row;
+}
+.desc {
+    font-size: 1rem;
+    color: rgb(0, 114, 206);
+    text-decoration: none;
+}
+.quantity-child {
+    display: flex;align-items: baseline;margin-bottom: 5%;
+}

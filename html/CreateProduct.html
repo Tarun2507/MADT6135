@@ -1,0 +1,89 @@
+<html>
+<div style="display: flex;justify-content: center;">
+    <div>
+        <label for="fname">Enter UPC of the product</label><br>
+        <input style="    height: 29px;
+    width: 280px;" type="text" id="upc" name="fname" value=""><br>
+        <label for="lname">Select product type</label><br>
+        <select onchange="selectedElement(this)" id="selects">
+
+        </select><br><br>
+        <label for="lname">Enter product price</label><br>
+        <input type="text" id="price" name="lname" value=""><br><br>
+        <label for="lname">Enter product description</label><br>
+        <input style="    height: 75px;
+    width: 400px;" type="text" id="pdesc" name="lname" value=""><br><br>
+        <input id="files" type="file" onchange="changeFile(event)"> <br><br>
+        <input onclick ="CreateProduct()"type="submit" value="Submit">
+    </div>
+</div>
+
+</html>
+<script>
+    var index = 0;
+    var products=[]
+    var filecontents
+    var selectedProductType
+    var selel = document.getElementById('selects')
+   // localStorage.setItem("types",JSON.stringify(items))
+    var items = JSON.parse(localStorage.getItem('types'))
+    loadProds()
+    
+    function loadProds() {
+        for (var i = 0; i < items.length; i++) {
+            var opt = document.createElement("option");
+            opt.value = index;
+            opt.innerHTML = items[i]; // whatever property it has
+
+            // then append it to the select element
+            selel.appendChild(opt);
+            index++;
+        }
+    }
+    function selectedElement(e) {
+        selectedProductType = e.options[e.selectedIndex].textContent
+    }
+    function changeFile(evt) {
+        // document.getElementById('picField').onchange = function (evt) {
+        var tgt = evt.target || window.event.srcElement,
+            files = tgt.files;
+
+        // FileReader support
+        if (FileReader && files && files.length) {
+            var fr = new FileReader();
+            fr.onload = function () {
+                // document.getElementById(outImage).src = fr.result;
+                console.log(fr.result)
+                filecontents = fr.result
+            }
+            fr.readAsDataURL(files[0]);
+        }
+
+        // Not supported
+        else {
+            // fallback -- perhaps submit the input to an iframe and temporarily store
+            // them on the server until the user's session ends.
+        }
+    }
+    function CreateProduct() {
+        products = JSON.parse(localStorage.getItem('products'))
+        if(products==null)
+        products=[]
+        var upc = document.getElementById('upc').value
+        var price = document.getElementById('price').value
+        var desc = document.getElementById('pdesc').value
+        var type = selectedProductType
+        var contents = filecontents
+        var product = {
+            upc :upc,
+            price : price,
+            type :type,
+            desc : desc,
+            urllink : contents,
+            color : "white"
+        }
+        products.push(product)
+        localStorage.setItem('products',JSON.stringify(products))
+        alert('Product created')
+    }
+</script>

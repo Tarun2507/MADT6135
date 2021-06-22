@@ -1,0 +1,76 @@
+<html>
+  <style>
+    #parent {
+    display:flex;flex-direction:column;border:1px solid #f5f5f6
+    }
+  </style>
+  <div id="grandp" style="display: flex;justify-content: center;flex-direction: column;">
+  <!--<div class="ordernumber">
+    <span>Order number: </span>
+    <div id="ordernumber">
+    
+    </div>
+  </div>
+  <div>
+    <span>Bag items</span>
+    <span id="baglength"></span>
+  </div>
+  <div class="status"> 
+    <span> </span>
+  </div>-->
+</div>
+</div>
+</html>
+<script>
+  loadOrders()
+  var orders = []
+  function loadOrders() {
+    var gg = document.getElementById('grandp')
+    orders = JSON.parse(localStorage.getItem('orders'))
+    for(var i=0;i<orders.length;i++) {
+      var pareel = document.createElement('div')
+      pareel.id = "parent"
+      var divel = document.createElement('div')
+      divel.className="ordernumber"
+      var spanels = document.createElement('span')
+      spanels.innerHTML = "Order number:" + orders[i].orderno
+      var divon = document.createElement('div')
+      divon.id ="ordernumber"
+      var bagitemdiv = document.createElement('div')
+      var spanel = document.createElement('span')
+      spanel.innerHTML = "Bag items"
+      var spanelbl = document.createElement('span')
+      spanelbl.innerHTML = orders[i].items.length
+      var statusdiv = document.createElement('div')
+      statusdiv.className = "status"
+      var spaneld = document.createElement('span')
+      spaneld.innerHTML = "Order status" + orders[i].status
+      statusdiv.appendChild(spaneld)
+      bagitemdiv.appendChild(spanel)
+      bagitemdiv.appendChild(spanelbl)
+      divel.appendChild(spanels)
+      divel.appendChild(divon)
+     pareel.appendChild(divel)
+     pareel.appendChild(bagitemdiv)
+     //pareel.appendChild(statusdiv)
+    var flexelement = document.createElement('div')
+    flexelement.style.display = 'flex';
+    var button1 = document.createElement('button')
+    button1.innerHTML = "Ready for shipment"
+    var button2 = document.createElement('button')
+    button2.innerHTML = "Delivered"
+    button1.addEventListener('click',changeStatus('Read for shipment',orders[i]))
+    button2.addEventListener('click',changeStatus('Delivered'))
+    flexelement.appendChild(button1)
+    flexelement.appendChild(button2)
+      pareel.appendChild(statusdiv)
+      pareel.appendChild(flexelement)
+      gg.appendChild(pareel)
+    }
+  }
+  function changeStatus(status,order) {
+  order.status = status;
+  localStorage.setItem('orders',JSON.stringify(orders))
+  }
+
+</script>

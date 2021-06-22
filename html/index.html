@@ -1,0 +1,157 @@
+<html>
+<link rel="stylesheet" type="text/css" href="../css/header.css">
+<link rel="stylesheet" type="text/css" href="../css/aisles.css">
+
+<body>
+    <div class="header">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUrnmr3CB1oDs0WqiWPzNxENXCnRE-1yKVKw&usqp=CAU"
+            class="logo">
+        <div class="search">
+            <div class="image-wrapper">
+                <img style="width: 15.7px;
+                height: 15.7px;background: #f5f5f6;
+                border: 1px solid #f5f5f6;" src="../css/images/search.png">
+            </div>
+            <input id="searchresult" onkeyup="searchProds()" placeholder="Search for products" class="input-css">
+
+        </div>
+        <div class="profile">
+            <div style="position: relative;display: inline-flex;">
+                <img onclick="hideandshow()" class="profile-image" src="../css/images/profile.png">
+                <ul id="ull"
+                    style="cursor: pointer;position: absolute;top: 100%;left: 0;z-index: 1000;display: none;float: left;min-width: 100px;padding: 5px 9px;margin: 2px 0 0;font-size: 14px;text-align: left;list-style: none;background-color: #fff;-webkit-background-clip: padding-box;background-clip: padding-box;border: 1px solid #ccc;border: 1px solid rgba(0,0,0,.15);border-radius: 4px;-webkit-box-shadow: 0 6px 12px rgb(0 0 0 / 18%);box-shadow: 0 6px 12px rgb(0 0 0 / 18%);cursor: pointer;/* position:absolute; *//* top:-6px; *//* right:-8px; *//* width: 16px; *//* height:16px; */">
+                    <li onclick="window.location.href='./order-status.html'"> View orders </li>
+                    <li onclick="logoutfrom()"> Logout </li>
+                </ul>
+            </div>
+            <img class="profile-image" src="../css/images/fav.png">
+            <div style="position: relative;display: inline-flex;">
+                <img class="profile-image" src="../css/images/bag.png">
+
+                <span id="bagcount" style="color: rgb(255, 255, 255);
+            background-color: rgb(208, 2, 27);
+            font-size: 10px;
+            position: absolute;
+            display: none;
+            -webkit-box-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            align-items: center;
+            top: -6px;
+            right: -8px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;"></span>
+            </div>
+        </div>
+    </div>
+    <!--
+        aisles
+    -->
+    <div class="aisles">
+        <div class="tiles-wrapper">
+            <h2 class="header-title">Shop our products</h2>
+            <div class="category-products">
+                <a onclick="navigateTo('Grocceries')" class="product">
+                    <img class="product-image"
+                        src="https://i5.walmartimages.com/dfw/8822aef6-cf87/k2-_1fbd0ab0-bbec-4d1a-8a17-f4eb60a91a21.v1.jpg">
+                    <span class="product-title"> Grocceries</span>
+                </a>
+                <a onclick="navigateTo('Clothing')" class="product">
+                    <img class="product-image"
+                        src="https://i5.walmartimages.com/dfw/8822aef6-3c75/k2-_7987a44e-bbd8-4da3-a2cc-d72c488ebe50.v1.jpg">
+                    <span class="product-title"> Clothing, shoes & accessories</span>
+                </a>
+                <a onclick="navigateTo('PC')" class="product">
+                    <img class="product-image"
+                        src="https://i5.walmartimages.com/dfw/8822aef6-26ff/k2-_76bf36b7-6b39-4870-8fcf-6c8ecac0ea3d.v1.jpg">
+                    <span class="product-title"> Personal Care </span>
+                </a>
+                <a onclick="navigateTo('Health')" class="product">
+                    <img class="product-image"
+                        src="https://i5.walmartimages.com/dfw/8822aef6-f655/k2-_1370882b-53e9-4821-9a83-7539e932cbe0.v1.jpg">
+                    <span class="product-title"> Health </span>
+                </a>
+                <a onclick="navigateTo('EC')" class="product">
+                    <img class="product-image"
+                        src="https://i5.walmartimages.com/dfw/8822aef6-e551/k2-_c8ba3f06-690f-41a1-b765-591ae8580d09.v1.jpg">
+                    <span class="product-title"> Electronics & entertainment </span>
+                </a>
+                <a onclick="navigateTo('Pets')" class="product">
+                    <img class="product-image"
+                        src="https://i5.walmartimages.com/dfw/8822aef6-6dfa/k2-_2e7fadc6-9953-46c1-a55c-b786184e76ef.v1.jpg">
+                    <span class="product-title"> Pets </span>
+                </a>
+                <a onclick="navigateTo('HA')" class="product">
+                    <img class="product-image"
+                        src="https://i5.walmartimages.com/dfw/8822aef6-b51f/k2-_6d2fb67c-c5a0-4a5a-bcf3-25baa0077d73.v1.jpg">
+                    <span class="product-title"> Household appliances</span>
+                </a>
+                <a onclick="navigateTo('Baby')" class="product">
+                    <img class="product-image"
+                        src="https://i5.walmartimages.com/dfw/8822aef6-1302/k2-_4c7f26eb-e212-45a8-a49b-510f0a30b6f6.v1.jpg">
+                    <span class="product-title"> Baby </span>
+                </a>
+                <a onclick="navigateTo('Toys')" class="product">
+                    <img class="product-image"
+                        src="https://i5.walmartimages.com/dfw/8822aef6-7b6f/k2-_0932ab49-d9e2-431e-9fa1-e07fb0d551c1.v1.jpg">
+                    <span class="product-title"> Toys & Sports </span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--
+        Offers
+    -->
+    <div class="offer">
+        <img src="https://i5.walmartimages.com/dfw/8822aef6-3d0b/k2-_1be06456-feab-4812-8844-6e978f71e618.v1.jpg"
+            class="banner">
+        <div class="offer-text">
+            <p class="offer-20">Get $20 off your first online order*</p>
+            <p class="promo">Promo code: TARUN20</p>
+        </div>
+    </div>
+    </div>
+    <!--
+        Top Cats
+    -->
+    <div class="cat">
+        <img
+            src="https://assets.myntassets.com/w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2021/6/10/a99680c2-cacd-4f6e-8033-f5f27a847a551623327568789-top-categories-to-bag.jpg">
+    </div>
+    <div class="offer-items">
+        <img
+            src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2021/6/11/fbd0e288-e15f-47eb-809d-2e0cd6008d201623398264630-Desktop_HP_20.jpg">
+        <img
+            src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2021/6/11/07b345ed-3067-4ecc-aa38-dc941df0dbac1623398264693-Desktop_HP_30.jpg">
+        <img
+            src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2021/6/11/80e5dc31-708d-45b3-b875-ec486268d8921623398264656-Desktop_HP_24.jpg">
+        <img
+            src="https://assets.myntassets.com/w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2021/6/11/e3b9e5b1-964c-4562-a61a-93e340a07dac1623398264668-Desktop_HP_26.jpg">
+    </div>
+</body>
+
+</html>
+<script>
+    updateBag()
+    function updateBag() {
+        document.getElementById('bagcount').style.display = 'inline-flex'
+        document.getElementById('bagcount').innerHTML = JSON.parse(localStorage.getItem('bag')).length
+    }
+    function navigateTo(type) {
+        localStorage.setItem('productType', type);
+        window.location.href = "./Genericproducts.html"
+    }
+    function hideandshow() {
+        document.getElementById('ull').style.display = 'block'
+    }
+    function logoutfrom() {
+        window.location.href = "./login.html"
+    }
+    function searchProds() {
+        if (event.keyCode === 13) {
+    event.preventDefault();
+            window.location.href="detailspage.html"
+  }
+    }
+</script>
